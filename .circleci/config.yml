@@ -5,13 +5,12 @@ orbs:
 
 workflows:
   deployment:
-    jobs:
-      staging:
-        branch: master
-        heroku:
-          appname: circle-ci-tes
+    staging:
+      branch: master
+      heroku:
+        appname: circle-ci-tes
 
   maven_test:
     jobs:
       - maven/test # checkout, build, test, and upload test results
-      - deployment
+
