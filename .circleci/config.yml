@@ -2,13 +2,18 @@ version: 2.1
 workflows:
   build-deploy:
     jobs:
-      - build-deploy
+      - deployment
 machine:
   java:
     version: oraclejdk8
 
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: circle-ci-tes
+jobs:
+  deployment:
+    machine: true
+    steps:
+      -checkout
+    run:
+      staging:
+        branch: master
+        heroku:
+          appname: circle-ci-tes
