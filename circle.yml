@@ -1,9 +1,7 @@
-machine:
-  java:
-    version: oraclejdk8
-
-deployment:
-  staging:
-    branch: main
-    heroku:
-      appname: circle-ci-tes
+version: '3.7'
+services:
+  circleci:
+    build: .
+    container_name: circle-ci-tes
+    ports:
+      - "8080:8080"
