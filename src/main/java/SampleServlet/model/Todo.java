@@ -25,5 +25,8 @@ public class Todo {
     public boolean isCompleted() {
         return completed;
     }
+    public boolean getCompleted() {
+        return completed;
+    }
 
 }
