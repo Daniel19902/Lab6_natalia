@@ -8,9 +8,9 @@ workflows:
     jobs:
       - maven/test # checkout, build, test, and upload test results
       - deployment
-
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: circle-ci-tes
+jobs:
+  deployment:
+    staging:
+      branch: master
+      heroku:
+        appname: circle-ci-tes
