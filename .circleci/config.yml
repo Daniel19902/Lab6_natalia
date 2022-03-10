@@ -1,21 +1,14 @@
 version: 2.1
 
+orbs:
+  maven: circleci/maven@0.0.12
 
+machine:
+  java:
+    version: oraclejdk8
 
-workflows:
-  maven_test:
-    jobs:
-      - build-deploy
-jobs:
-  build-deploy:
-    machine: true
-    steps:
-      - checkout
-      - run:
-          name: lab6
-          command: |
-            set -x
-            sudo curl https://cli-assets.heroku.com/install.sh | sh
-            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
-            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a circle-ci-tes web
-            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a circle-ci-tes web
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: circle-ci-tes
