@@ -1,7 +1,6 @@
 version: 2.1
 
-orbs:
-  maven: circleci/maven@0.0.12
+
 
 workflows:
   maven_test:
@@ -14,7 +13,7 @@ jobs:
       - checkout
       - run:
           name: lab6
-          command:
+          command: |
             set -x
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
