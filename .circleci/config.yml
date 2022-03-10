@@ -4,12 +4,6 @@ orbs:
   maven: circleci/maven@0.0.12
 
 workflows:
-  deployment:
-    staging:
-      branch: master
-      heroku:
-        appname: circle-ci-tes
-
   maven_test:
     jobs:
       - maven/test # checkout, build, test, and upload test results
