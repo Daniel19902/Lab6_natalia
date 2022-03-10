@@ -1,19 +1,16 @@
 version: 2.1
+
+orbs:
+  maven: circleci/maven@0.0.12
+
 workflows:
-  build-deploy:
+  maven_test:
     jobs:
+      - maven/test # checkout, build, test, and upload test results
       - deployment
-machine:
-  java:
-    version: oraclejdk8
 
-jobs:
-  deployment:
-    machine: true
-    steps:
-      -checkout
-
-    staging:
-      branch: master
-      heroku:
+deployment:
+  staging:
+    branch: master
+    heroku:
       appname: circle-ci-tes
