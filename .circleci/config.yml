@@ -1,5 +1,8 @@
 version: 2.1
-
+workflows:
+  build-deploy:
+    jobs:
+      - build-deploy
 machine:
   java:
     version: oraclejdk8
