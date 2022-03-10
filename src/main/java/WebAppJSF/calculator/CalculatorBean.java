@@ -68,6 +68,7 @@ public class CalculatorBean implements Serializable {
 
     public List<Double> calculateModes() {
         final List<Double> modes = new ArrayList<>();
+
         final Map<Double, Integer> countMap = new HashMap<>();
 
         int max = -1;
