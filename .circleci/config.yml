@@ -12,8 +12,8 @@ jobs:
     machine: true
     steps:
       -checkout
-    run:
-      staging:
-        branch: master
-        heroku:
-          appname: circle-ci-tes
+
+    staging:
+      branch: master
+      heroku:
+      appname: circle-ci-tes
